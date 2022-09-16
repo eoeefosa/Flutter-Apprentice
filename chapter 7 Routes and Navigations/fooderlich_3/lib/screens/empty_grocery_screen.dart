@@ -29,7 +29,6 @@ class EmptyGroceryScreen extends StatelessWidget {
             ),
             MaterialButton(
               textColor: Colors.white,
-              child: const Text('Browse Recipes'),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
@@ -37,6 +36,7 @@ class EmptyGroceryScreen extends StatelessWidget {
               onPressed: () {
                 // TODO: Update user's selected tab
               },
+              child: const Text('Browse Recipes'),
             ),
           ],
         ),
