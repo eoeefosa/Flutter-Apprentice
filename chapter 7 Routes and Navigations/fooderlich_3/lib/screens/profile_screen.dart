@@ -5,7 +5,13 @@ import '../components/circle_image.dart';
 import '../models/models.dart';
 
 class ProfileScreen extends StatefulWidget {
-  // TODO: ProfileScreen MaterialPage Helper
+  static MaterialPage page(user) {
+    return MaterialPage(
+      name: FooderlichPages.profilePath,
+      key: ValueKey(FooderlichPages.profilePath),
+      child: ProfileScreen(user: user),
+    );
+  }
 
   final User user;
   const ProfileScreen({
@@ -25,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () {
-            // TODO: Close Profile Screen
+            Provider.of<ProfileManager>(context, listen: false).tapOnProfile(false);
           },
         ),
       ),
@@ -74,8 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Switch(
             value: widget.user.darkMode,
             onChanged: (value) {
-              Provider.of<ProfileManager>(context, listen: false).darkMode =
-                  value;
+              Provider.of<ProfileManager>(context, listen: false).darkMode = value;
             },
           )
         ],
