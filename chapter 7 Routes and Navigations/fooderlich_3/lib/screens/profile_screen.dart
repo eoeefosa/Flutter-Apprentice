@@ -57,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ListTile(
           title: const Text('View raywenderlich.com'),
           onTap: () {
-            Provider.of<ProfileManager>(context).tapOnRaywenderlich(true);
+            Provider.of<ProfileManager>(context, listen: false).tapOnRaywenderlich(true);
           },
         ),
         ListTile(
