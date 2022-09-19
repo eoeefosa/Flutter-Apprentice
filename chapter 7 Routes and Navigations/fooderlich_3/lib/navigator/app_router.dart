@@ -42,7 +42,6 @@ class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDe
           GroceryItemScreen.page(onCreate: (item) {
             groceryManager.addItem(item);
           }),
-
         if (groceryManager.selectedIndex != null)
           GroceryItemScreen.page(
               item: groceryManager.selectedGroceryItem,
@@ -51,8 +50,7 @@ class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDe
                 groceryManager.updateItem(item, index);
               }),
         if (profileManager.didSelectUser) ProfileScreen.page(profileManager.getUser),
-
-        // TODO: Add WebView Screen
+        if (profileManager.didTapOnRaywenderlich) WebViewScreen.page(),
       ],
     );
   }
