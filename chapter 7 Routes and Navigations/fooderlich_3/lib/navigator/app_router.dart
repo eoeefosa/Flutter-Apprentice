@@ -37,8 +37,18 @@ class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDe
         if (appStateManager.isInitialized & !appStateManager.isLoggedIn) LoginScreen.page(),
         if (appStateManager.isInitialized & appStateManager.isLoggedIn & !appStateManager.isOnboardingComplete) OnboardingScreen.page(),
         if (appStateManager.isOnboardingComplete) Home.page(appStateManager.getSelectedTab),
-        // TODO: Create new item
-        // TODO: Select GroceryItemScreen
+        if (groceryManager.isCreatingNewItem)
+          GroceryItemScreen.page(onCreate: (item) {
+            groceryManager.addItem(item);
+          }),
+
+        if (groceryManager.selectedIndex != null)
+          GroceryItemScreen.page(
+              item: groceryManager.selectedGroceryItem,
+              index: groceryManager.selectedIndex,
+              onUpdate: (item, index) {
+                groceryManager.updateItem(item, index);
+              })
         // TODO: Add Profile Screen
         // TODO: Add WebView Screen
       ],
@@ -52,7 +62,9 @@ class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDe
     if (route.settings.name == FooderlichPages.onboardingPath) {
       appStateManager.logOut();
     }
-    // TODO: Handle state when user closes grocery item screen
+    if (route.settings.name == FooderlichPages.groceryItemDetails) {
+      groceryManager.groceryItemTapped(null);
+    }
     // TODO: Handle state when user closes profile screen
     // TODO: Handle state when user closes WebView screen
     return true;

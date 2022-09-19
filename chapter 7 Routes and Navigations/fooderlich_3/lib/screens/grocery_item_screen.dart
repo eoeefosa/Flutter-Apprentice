@@ -8,19 +8,21 @@ import '../components/grocery_tile.dart';
 import '../models/models.dart';
 
 class GroceryItemScreen extends StatefulWidget {
-  final Function(GroceryItem) onCreate;
-  final Function(GroceryItem, int) onUpdate;
+  final Function(GroceryItem)? onCreate;
+  final Function(GroceryItem, int)? onUpdate;
   final GroceryItem? originalItem;
-  final int index;
+  final int? index;
   final bool isUpdating;
 
   static MaterialPage page({
     GroceryItem? item,
-    required int index,
-    required Function(GroceryItem) onCreate,
-    required Function(GroceryItem, int) onUpdate,
+    int? index,
+    Function(GroceryItem)? onCreate,
+    Function(GroceryItem, int)? onUpdate,
   }) {
     return MaterialPage(
+      key: ValueKey(FooderlichPages.groceryItemDetails),
+      name: FooderlichPages.groceryItemDetails,
       child: GroceryItemScreen(
         originalItem: item,
         index: index,
@@ -76,12 +78,12 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               );
 
               if (widget.isUpdating) {
-                widget.onUpdate(
+                widget.onUpdate!(
                   groceryItem,
-                  widget.index,
+                  widget.index!,
                 );
               } else {
-                widget.onCreate(groceryItem);
+                widget.onCreate!(groceryItem);
               }
             },
           )

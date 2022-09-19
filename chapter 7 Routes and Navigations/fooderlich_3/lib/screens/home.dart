@@ -72,7 +72,6 @@ class _HomeState extends State<Home> {
         );
       },
     );
-    // TODO: Add closing },);
   }
 
   Widget profileButton() {
