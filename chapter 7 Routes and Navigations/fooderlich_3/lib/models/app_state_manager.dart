@@ -19,7 +19,7 @@ class AppStateManager extends ChangeNotifier {
   int get getSelectedTab => _selectedTab;
 
   void initializeApp() {
-    Timer(const Duration(milliseconds: 2000), () {
+    Timer(const Duration(), () {
       _initialized = true;
       notifyListeners();
     });
