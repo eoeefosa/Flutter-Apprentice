@@ -42,7 +42,7 @@ class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDe
           GroceryItemScreen.page(onCreate: (item) {
             groceryManager.addItem(item);
           }),
-        if (groceryManager.selectedIndex != null)
+        if (groceryManager.selectedIndex != -1)
           GroceryItemScreen.page(
               item: groceryManager.selectedGroceryItem,
               index: groceryManager.selectedIndex,
