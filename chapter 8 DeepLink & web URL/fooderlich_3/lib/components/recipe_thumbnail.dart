@@ -6,9 +6,9 @@ class RecipeThumbnail extends StatelessWidget {
   final SimpleRecipe recipe;
 
   const RecipeThumbnail({
-    Key? key,
+    super.key,
     required this.recipe,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,10 @@ class RecipeThumbnail extends StatelessWidget {
           Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(recipe.dishImage, fit: BoxFit.cover),
+              child: Image.asset(
+                recipe.dishImage,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(height: 10),
@@ -32,7 +35,7 @@ class RecipeThumbnail extends StatelessWidget {
           Text(
             recipe.duration,
             style: Theme.of(context).textTheme.bodyText1,
-          )
+          ),
         ],
       ),
     );
