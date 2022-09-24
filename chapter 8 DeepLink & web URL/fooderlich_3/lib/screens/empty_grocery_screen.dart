@@ -33,7 +33,6 @@ class EmptyGroceryScreen extends StatelessWidget {
             const SizedBox(height: 16.0),
             MaterialButton(
               textColor: Colors.white,
-              child: const Text('Browse Recipes'),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
@@ -42,6 +41,7 @@ class EmptyGroceryScreen extends StatelessWidget {
                 Provider.of<AppStateManager>(context, listen: false)
                     .goToRecipes();
               },
+              child: const Text('Browse Recipes'),
             ),
           ],
         ),

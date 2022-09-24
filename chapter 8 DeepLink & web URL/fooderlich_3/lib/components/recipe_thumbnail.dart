@@ -19,8 +19,8 @@ class RecipeThumbnail extends StatelessWidget {
         children: [
           Expanded(
             child: ClipRRect(
-              child: Image.asset('${recipe.dishImage}', fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(12),
+              child: Image.asset(recipe.dishImage, fit: BoxFit.cover),
             ),
           ),
           const SizedBox(height: 10),
