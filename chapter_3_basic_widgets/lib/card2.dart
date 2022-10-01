@@ -20,13 +20,15 @@ class card2 extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Row(children: [
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 35,
-                  child: CircleAvatar(radius: 30, backgroundImage: AssetImage("assets/me.jpg")),
-                ),
-              ]),
+              Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 35,
+                    child: CircleAvatar(radius: 30, backgroundImage: AssetImage("assets/me.jpg")),
+                  ),
+                ],
+              ),
               Expanded(
                 child: Stack(
                   children: [
