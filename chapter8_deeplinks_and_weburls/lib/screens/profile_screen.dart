@@ -48,7 +48,7 @@ class ProfileScreenState extends State<ProfileScreen> {
         ListTile(
           title: const Text('View raywenderlich.com'),
           onTap: () async {
-            if (kIsWeb || Platform.isMacOS) {
+            if (kIsWeb || Platform.isWindows) {
               await launchUrl(Uri.parse('https://www.raywenderlich.com/'));
             } else {
               context.goNamed(
@@ -78,7 +78,7 @@ class ProfileScreenState extends State<ProfileScreen> {
           Switch(
             value: widget.user.darkMode,
             onChanged: (value) {
-              Provider.of<ProfileManager>(context, listen: false).darkMode =
+              Provider.of<ProfileManager>(context, listen: false).darkMode = //
                   value;
             },
           )
