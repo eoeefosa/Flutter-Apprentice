@@ -87,7 +87,7 @@ class Applink {
         return Uri.encodeFull(loc);
 
 // If the path is invalid, default to the path /home. If the
-//user selected a tab, sappend ?tab=${tabIndex}.
+//user selected a tab, append ?tab=${tabIndex}.
       default:
         var loc = '$kHomePath?';
         loc += addKeyVAlPair(key: kTabParam, value: currentTab.toString());
