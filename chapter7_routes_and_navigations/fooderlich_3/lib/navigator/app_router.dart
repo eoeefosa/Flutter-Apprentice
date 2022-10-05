@@ -20,6 +20,7 @@ class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDe
     groceryManager.addListener(notifyListeners);
     profileManager.addListener(notifyListeners);
   }
+
   @override
   void dispose() {
     appStateManager.removeListener(notifyListeners);
