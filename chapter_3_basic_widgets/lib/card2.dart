@@ -21,7 +21,7 @@ class card2 extends StatelessWidget {
           child: Column(
             children: [
               Row(
-                children: [
+                children: const [
                   CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: 35,
