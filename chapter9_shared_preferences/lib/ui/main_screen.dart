@@ -55,21 +55,9 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/icon_recipe.svg',
-                  color: _selectedIndex == 0 ? green : Colors.grey,
-                  semanticsLabel: 'Recipes'),
-              label: 'Recipes'),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/icon_bookmarks.svg',
-                  color: _selectedIndex == 1 ? green : Colors.grey,
-                  semanticsLabel: 'Bookmarks'),
-              label: 'Bookmarks'),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/icon_shopping_list.svg',
-                  color: _selectedIndex == 2 ? green : Colors.grey,
-                  semanticsLabel: 'Groceries'),
-              label: 'Groceries'),
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/images/icon_recipe.svg', color: _selectedIndex == 0 ? green : Colors.grey, semanticsLabel: 'Recipes'), label: 'Recipes'),
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/images/icon_bookmarks.svg', color: _selectedIndex == 1 ? green : Colors.grey, semanticsLabel: 'Bookmarks'), label: 'Bookmarks'),
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/images/icon_shopping_list.svg', color: _selectedIndex == 2 ? green : Colors.grey, semanticsLabel: 'Groceries'), label: 'Groceries'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: green,
@@ -85,13 +73,11 @@ class _MainScreenState extends State<MainScreen> {
           statusBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.white,
           //Navigation bar divider color
-          systemNavigationBarIconBrightness:
-              Brightness.light, //navigation bar icon
+          systemNavigationBarIconBrightness: Brightness.light, //navigation bar icon
         ),
         title: Text(
           title,
-          style: const TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
         ),
       ),
       body: IndexedStack(

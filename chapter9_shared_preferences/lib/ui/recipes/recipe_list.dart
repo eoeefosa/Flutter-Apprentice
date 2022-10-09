@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-// TODO: Add imports
+import 'package:shared_preferences/shared_preferences.dart';
+import '../widgets/custom_dropdown.dart';
+import '../colors.dart';
 
 class RecipeList extends StatefulWidget {
   const RecipeList({Key? key}) : super(key: key);
@@ -31,19 +33,14 @@ class _RecipeListState extends State<RecipeList> {
     searchTextController = TextEditingController(text: '');
     _scrollController
       ..addListener(() {
-        final triggerFetchMoreSize =
-            0.7 * _scrollController.position.maxScrollExtent;
+        final triggerFetchMoreSize = 0.7 * _scrollController.position.maxScrollExtent;
 
         if (_scrollController.position.pixels > triggerFetchMoreSize) {
-          if (hasMore &&
-              currentEndPosition < currentCount &&
-              !loading &&
-              !inErrorState) {
+          if (hasMore && currentEndPosition < currentCount && !loading && !inErrorState) {
             setState(() {
               loading = true;
               currentStartPosition = currentEndPosition;
-              currentEndPosition =
-                  min(currentStartPosition + pageCount, currentCount);
+              currentEndPosition = min(currentStartPosition + pageCount, currentCount);
             });
           }
         }
@@ -77,8 +74,7 @@ class _RecipeListState extends State<RecipeList> {
   Widget _buildSearchCard() {
     return Card(
       elevation: 4,
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Row(
@@ -94,14 +90,15 @@ class _RecipeListState extends State<RecipeList> {
                 children: <Widget>[
                   Expanded(
                     child: TextField(
-                      decoration: const InputDecoration(
-                          border: InputBorder.none, hintText: 'Search'),
+                      decoration: const InputDecoration(border: InputBorder.none, hintText: 'Search'),
                       autofocus: false,
                       controller: searchTextController,
                       onChanged: (query) => {
-                        if (query.length >= 3) {
+                        if (query.length >= 3)
+                          {
                             // Rebuild list
-                            setState(() {
+                            setState(
+                              () {
                                 currentSearchList.clear();
                                 currentCount = 0;
                                 currentEndPosition = pageCount;
