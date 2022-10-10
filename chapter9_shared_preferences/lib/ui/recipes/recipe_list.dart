@@ -14,9 +14,14 @@ class RecipeList extends StatefulWidget {
 }
 
 class _RecipeListState extends State<RecipeList> {
+  // key
   static const String prefSearchKey = 'previousSearches';
+
+  // controllers
   late TextEditingController searchTextController;
   final ScrollController _scrollController = ScrollController();
+
+  // data
   List currentSearchList = [];
   int currentCount = 0;
   int currentStartPosition = 0;
@@ -27,10 +32,11 @@ class _RecipeListState extends State<RecipeList> {
   bool inErrorState = false;
   List<String> previousSearches = <String>[];
 
+// initState
   @override
   void initState() {
     super.initState();
-    // TODO: Call getPreviousSearches
+    getPreviousSearches();
     searchTextController = TextEditingController(text: '');
     _scrollController.addListener(() {
       final triggerFetchMoreSize = 0.7 * _scrollController.position.maxScrollExtent;
@@ -56,6 +62,22 @@ class _RecipeListState extends State<RecipeList> {
   void savePreviousSearches() async {
     final prefs = await SharedPreferences.getInstance();
     prefs.setStringList(prefSearchKey, previousSearches);
+  }
+
+  void getPreviousSearches() async {
+    // Use the await keyword to wait for an instance of SharedPreferences.
+    final pref = await SharedPreferences.getInstance();
+    // Check if a preference for your saved list already exists
+    if (pref.containsKey(prefSearchKey)) {
+      // Get the list of previous searches
+      final searches = pref.getStringList(prefSearchKey);
+      // If the list is not null, set the previous searches, otherwise initialize an empty list
+      if (searches != null) {
+        previousSearches = searches;
+      } else {
+        previousSearches = <String>[];
+      }
+    }
   }
 
   @override
