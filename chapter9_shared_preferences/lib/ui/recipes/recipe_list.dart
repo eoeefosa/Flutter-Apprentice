@@ -121,7 +121,6 @@ class _RecipeListState extends State<RecipeList> {
             const SizedBox(
               width: 6.0,
             ),
-            // *** Start Replace
             Expanded(
               child: Row(
                 children: <Widget>[
@@ -176,7 +175,6 @@ class _RecipeListState extends State<RecipeList> {
                 ],
               ),
             ),
-            // *** End Replace
           ],
         ),
       ),
