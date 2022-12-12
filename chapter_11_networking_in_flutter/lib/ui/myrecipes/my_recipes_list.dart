@@ -19,14 +19,6 @@ class _MyRecipesListState extends State<MyRecipesList> {
     recipes = <String>[];
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: _buildRecipeList(context),
-    );
-  }
-
   Widget _buildRecipeList(BuildContext context) {
     // TODO 3
     return ListView.builder(
@@ -91,5 +83,13 @@ class _MyRecipesListState extends State<MyRecipesList> {
           );
         });
     // TODO 9
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: _buildRecipeList(context),
+    );
   }
 }
