@@ -14,10 +14,11 @@ class RecipeService {
     // for debugging purpose
     print('Calling url: $url');
     // response doesnt have a value until await is complete
-    final response = await get(Uri.parse(url));
     // get fetches data from the provided url
-// note Response and get are from HTTP package
-// if successful
+    // note Response and get are from HTTP package
+    final response = await get(Uri.parse(url));
+
+    // if successful
     if (response.statusCode == 200) {
       return response.body;
     } else {

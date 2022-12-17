@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:chapter_11_networking_in_flutter/network/recipe_model.dart';
 import 'package:flutter/material.dart';
+import '../network/recipe_service.dart';
 
 // TODO: Replace with new class
-Widget recipeStringCard(String image, String label) {
+Widget recipeCard(APIRecipe recipe) {
+// Widget recipeStringCard(String image, String label) {
   return Card(
     elevation: 4.0,
     shape: RoundedRectangleBorder(
@@ -15,8 +18,8 @@ Widget recipeStringCard(String image, String label) {
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(6.0), topRight: Radius.circular(6.0)),
             child: CachedNetworkImage(
-                // TODO: Replace with image from recipe
-                imageUrl: image,
+                imageUrl: recipe.image,
+                // imageUrl: image,
                 height: 210,
                 fit: BoxFit.fill)),
         const SizedBox(
@@ -25,8 +28,7 @@ Widget recipeStringCard(String image, String label) {
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(
-            // TODO: Replace with label from recipe
-            label,
+            recipe.label,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
@@ -36,11 +38,11 @@ Widget recipeStringCard(String image, String label) {
           height: 8.0,
         ),
         // TODO: Replace Padding section with getCalories()
-        const Padding(
-          padding: EdgeInsets.only(left: 8.0),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
           child: Text(
-            '320CAL',
-            style: TextStyle(
+            getCalories(recipe.calories),
+            style: const TextStyle(
               fontWeight: FontWeight.normal,
               fontSize: 11,
             ),
