@@ -6,7 +6,6 @@ import 'myrecipes/my_recipes_list.dart';
 import 'recipes/recipe_list.dart';
 import 'shopping/shopping_list.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:chapter_3_basic_widgets/fooderlich_theme.dart';
 import 'package:flutter/material.dart';
 
-class card2 extends StatelessWidget {
-  const card2({super.key});
+class Card2 extends StatelessWidget {
+  const Card2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,9 @@ class card2 extends StatelessWidget {
                   CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: 35,
-                    child: CircleAvatar(radius: 30, backgroundImage: AssetImage("assets/me.jpg")),
+                    child: CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/me.jpg")),
                   ),
                 ],
               ),
@@ -39,7 +41,7 @@ class card2 extends StatelessWidget {
                         quarterTurns: 3,
                         child: Text(
                           'Smoothies',
-                          style: FooderlichTheme.LightTextTheme.headline1,
+                          style: FooderlichTheme.lightTextTheme.displayLarge,
                         ),
                       ),
                     ),
@@ -48,7 +50,7 @@ class card2 extends StatelessWidget {
                       right: 10,
                       child: Text(
                         "Recipes",
-                        style: FooderlichTheme.LightTextTheme.headline1,
+                        style: FooderlichTheme.lightTextTheme.displayLarge,
                       ),
                     ),
                   ],

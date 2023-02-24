@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
           appBar: AppBar(
             title: Text(
               'Fooderlich',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             actions: [
               profileButton(),
@@ -49,10 +49,12 @@ class _HomeState extends State<Home> {
           ),
           body: IndexedStack(index: widget.currentTab, children: pages),
           bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
+            selectedItemColor:
+                Theme.of(context).textSelectionTheme.selectionColor,
             currentIndex: widget.currentTab,
             onTap: (index) {
-              Provider.of<AppStateManager>(context, listen: false).gotoTab(index);
+              Provider.of<AppStateManager>(context, listen: false)
+                  .gotoTab(index);
             },
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -85,7 +87,8 @@ class _HomeState extends State<Home> {
           ),
         ),
         onTap: () {
-          Provider.of<ProfileManager>(context, listen: false).tapOnProfile(true);
+          Provider.of<ProfileManager>(context, listen: false)
+              .tapOnProfile(true);
         },
       ),
     );

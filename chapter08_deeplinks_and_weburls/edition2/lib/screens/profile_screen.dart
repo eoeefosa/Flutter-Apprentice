@@ -61,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           title: const Text('View raywenderlich.com'),
           onTap: () async {
             if (kIsWeb) {
-              await launch('https://www.raywenderlich.com/');
+              await launchUrl('https://www.raywenderlich.com/' as Uri);
             } else {
               Provider.of<ProfileManager>(context, listen: false)
                   .tapOnRaywenderlich(true);

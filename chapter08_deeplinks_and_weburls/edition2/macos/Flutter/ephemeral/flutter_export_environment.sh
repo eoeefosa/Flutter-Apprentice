@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=C:\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\eoeef\OneDrive\Documents\flta-materials\08-deep-links-and-web-URLs\projects\starter"
+export "FLUTTER_APPLICATION_PATH=C:\Users\eoeef\OneDrive\Documents\coding arena\flutter Apprentice\chapter08_deeplinks_and_weburls\edition2"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"

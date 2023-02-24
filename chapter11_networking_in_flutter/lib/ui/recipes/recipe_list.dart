@@ -33,7 +33,7 @@ class _RecipeListState extends State<RecipeList> {
   bool loading = false;
   bool inErrorState = false;
   List<String> previousSearches = <String>[];
-  APIRecipeQuery? _currentRecipes1 = null;
+  APIRecipeQuery? _currentRecipes1;
 
   @override
   void initState() {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fooderlich/models/models.dart';
 import 'package:fooderlich/screens/screens.dart';
-import 'package:provider/provider.dart';
 
 class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDelegateMixin {
   @override

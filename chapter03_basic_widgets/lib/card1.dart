@@ -20,13 +20,13 @@ class Card1 extends StatelessWidget {
           child: Stack(children: [
             Text(
               "Editors's Choice",
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             Positioned(
               top: 20,
               child: Text(
                 "The Art of Dough",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
             Positioned(
@@ -34,7 +34,7 @@ class Card1 extends StatelessWidget {
               right: 0,
               child: Text(
                 "Learn to make the perfect bread",
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
             Positioned(

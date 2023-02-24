@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chapter_11_networking_in_flutter/network/recipe_model.dart';
 import 'package:flutter/material.dart';
-import '../network/recipe_service.dart';
 
 // TODO: Replace with new class
 Widget recipeCard(APIRecipe recipe) {
